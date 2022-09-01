@@ -1,3 +1,6 @@
+#Take a range from 0 – 100, find the digits that are repeated twice like 33, 77,
+#etc and store them in an array
+
 #!/bin/bash -x
 
 count=0
@@ -11,5 +14,6 @@ do
 	then
 		array[count++]=$i
 	fi
-echo ${array[@]}
 done
+echo "The numbers which are repeated twice like 33, 77... between 1-100 are : "
+echo ${array[@]}

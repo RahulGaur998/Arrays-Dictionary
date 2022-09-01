@@ -1,3 +1,10 @@
+#1. Write a program in the following steps
+#a. Roll a die and find the number between 1 to 6
+#b. Repeat the Die roll and find the result each time
+#c. Store the result in a dictionary
+#d. Repeat till any one of the number has reached 10 times
+#e. Find the number that reached maximum times and the one that was for minimum times
+
 #!/bin/bash -x
 
 declare -A DIE
@@ -36,43 +43,48 @@ do
 	esac
 done
 
+total=$((${DIE[1]}+${DIE[2]}+${DIE[3]}+${DIE[4]}+${DIE[5]}+${DIE[6]}))
+echo "After rolling the die for $total times the result is : "
+
 echo ${DIE[@]}
+
+echo "-------"
 
 if [ ${DIE[1]} -gt ${DIE[2]} ] && [ ${DIE[1]} -gt ${DIE[3]} ] && [ ${DIE[1]} -gt ${DIE[4]} ] && [ ${DIE[1]} -gt ${DIE[5]} ] && [ ${DIE[1]} -gt ${DIE[6]} ]
 then
-	echo "${DIE[1]} is MAX!"
+	echo "1 is MAX ${DIE[1]} rolls!"
 elif [ ${DIE[2]} -gt ${DIE[3]} ] && [ ${DIE[2]} -gt ${DIE[4]} ] && [ ${DIE[2]} -gt ${DIE[5]} ] && [ ${DIE[2]} -gt ${DIE[6]} ]
 then
-	echo "${DIE[2]} is MAX!"
+        echo "2 is MAX ${DIE[2]} rolls!"
 elif [ ${DIE[3]} -gt ${DIE[4]} ] && [ ${DIE[3]} -gt ${DIE[5]} ] && [ ${DIE[3]} -gt ${DIE[6]} ]
 then
-	echo "${DIE[3]} is MAX!"
+        echo "3 is MAX ${DIE[3]} rolls!"
 elif [ ${DIE[4]} -gt ${DIE[5]} ] && [ ${DIE[4]} -gt ${DIE[6]} ]
 then
-	echo "${DIE[4]} is MAX!"
+        echo "4 is MAX ${DIE[4]} rolls!"
 elif [ ${DIE[5]} -gt ${DIE[6]} ]
 then
-	echo "${DIE[5]} is MAX!"
+        echo "5 is MAX ${DIE[5]} rolls!"
 else
-	echo "${DIE[6]} is MAX!"
+        echo "6 is MAX ${DIE[6]} rolls!"
 fi
 
 if [ ${DIE[1]} -lt ${DIE[2]} ] && [ ${DIE[1]} -lt ${DIE[3]} ] && [ ${DIE[1]} -lt ${DIE[4]} ] && [ ${DIE[1]} -lt ${DIE[5]} ] && [ ${DIE[1]} -lt ${DIE[6]} ]
 then
-        echo "${DIE[1]} is MIN!"
+        echo "1 is MIN ${DIE[1]} rolls!"
 elif [ ${DIE[2]} -lt ${DIE[3]} ] && [ ${DIE[2]} -lt ${DIE[4]} ] && [ ${DIE[2]} -lt ${DIE[5]} ] && [ ${DIE[2]} -lt ${DIE[6]} ]
 then
-        echo "${DIE[2]} is MIN!"
+        echo "2 is MIN ${DIE[2]} rolls!"
 elif [ ${DIE[3]} -lt ${DIE[4]} ] && [ ${DIE[3]} -lt ${DIE[5]} ] && [ ${DIE[3]} -lt ${DIE[6]} ]
 then
-        echo "${DIE[3]} is MIN!"
+        echo "3 is MIN ${DIE[3]} rolls!"
 elif [ ${DIE[4]} -lt ${DIE[5]} ] && [ ${DIE[4]} -lt ${DIE[6]} ]
 then
-        echo "${DIE[4]} is MIN!"
+        echo "4 is MIN ${DIE[4]} rolls!"
 elif [ ${DIE[5]} -lt ${DIE[6]} ]
 then
-        echo "${DIE[5]} is MIN!"
+        echo "5 is MIN ${DIE[5]} rolls!"
 else
-        echo "${DIE[6]} is MIN!"
+        echo "6 is MIN ${DIE[6]} rolls!"
 fi
 
